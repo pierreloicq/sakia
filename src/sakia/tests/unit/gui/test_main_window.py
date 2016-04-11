@@ -47,10 +47,12 @@ class TestMainWindow(unittest.TestCase, QuamashTest):
         label_status = Mock()
         label_time = Mock()
         combo_referentials = Mock()
+        combo_referentials.currentIndexChanged = {int: Mock()}
         mainwindow = MainWindow(self.app, self.account_joe, self.homescreen, self.community_view, widget, ui, label_icon,
                                 label_status, label_time, combo_referentials, self.password_asker)
         mainwindow.refresh = Mock()
         mainwindow.action_change_account("doe")
+
         self.app.change_current_account.assert_called_once_with(self.account_doe)
         mainwindow.change_account()
 
@@ -69,6 +71,7 @@ class TestMainWindow(unittest.TestCase, QuamashTest):
         label_status = Mock()
         label_time = Mock()
         combo_referentials = Mock()
+        combo_referentials.currentIndexChanged = {int: Mock()}
         type(self.app).current_account = PropertyMock(return_value=None)
         mainwindow = MainWindow(self.app, None, self.homescreen, self.community_view, widget, ui, label_icon,
                                 label_status, label_time, combo_referentials, self.password_asker)
