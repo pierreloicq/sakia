@@ -5,7 +5,7 @@ eval "$(pyenv virtualenv-init -)"
 
 cd $HOME/build/duniter/sakia
 
-
+pyenv shell $PYENV_PYTHON_VERSION
 pyenv activate sakia-env
 pip install coveralls
 pip install pyinstaller
