@@ -86,7 +86,8 @@ then
             --enable QtWebEngineWidgets \
             --enable QtNetwork \
             --enable QtPrintSupport \
-            --enable QtTest
+            --enable QtTest \
+            --pyuic5-interpreter python
     elif [ $TRAVIS_OS_NAME == "linux" ]
     then
         python configure.py --qmake "/tmp/qt/5.5/5.5/gcc_64/bin/qmake" --confirm-license  \
