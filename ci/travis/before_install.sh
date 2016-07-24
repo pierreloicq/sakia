@@ -87,7 +87,7 @@ then
             --enable QtNetwork \
             --enable QtPrintSupport \
             --enable QtTest \
-            --pyuic5-interpreter python
+            --pyuic5-interpreter /Users/travis/.pyenv/versions/3.5.2/bin/python
     elif [ $TRAVIS_OS_NAME == "linux" ]
     then
         python configure.py --qmake "/tmp/qt/5.5/5.5/gcc_64/bin/qmake" --confirm-license  \
